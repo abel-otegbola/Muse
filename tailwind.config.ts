@@ -8,13 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "primary": "#BD4F27",
+        "secondary": "#1D2128",
+        "tetiary": "#FAFAFA",
+        "black": "#333333",
+        "brown": "#737373",
+        "gray": "#D9D9D9",
+        "slate": "#FAFAFA",
+        "red": "#FF3939",
       },
+      boxShadow: {
+        "input-active" : "0px 0px 12px 0px #633CFF40"
+      }
     },
   },
   plugins: [],
 };
+
 export default config;
