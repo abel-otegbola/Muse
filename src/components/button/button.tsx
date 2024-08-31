@@ -24,7 +24,7 @@ export default function Button({ variant, className, href, size, disabled, onCli
             ${variants[variant || "primary"]}
             ${className} 
             ${disabled ? "opacity-[0.25]" : ""}
-            ${size === "full" ? "w-full" : "sm:w-fit w-full"}
+            ${size === "full" ? "w-full" : "w-fit"}
         `}
         disabled={disabled}
         onClick={() => href ? router.push(href) : onClick}
