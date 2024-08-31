@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDj2-YvUs4-VdgYPzkTp7FHjQ8H0eLMp6Y",
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_KEY,
     authDomain: "devlinks-hng-8.firebaseapp.com",
     projectId: "devlinks-hng-8",
     storageBucket: "devlinks-hng-8.appspot.com",
     messagingSenderId: "290009761564",
-    appId: "1:290009761564:web:3e3b2fea98e0ca622a9cd9",
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APPID,
     measurementId: "G-QWMRE0DQG8"
 };
 
