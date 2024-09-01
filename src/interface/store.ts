@@ -11,5 +11,8 @@ export interface IProductProps {
     createdAt?: string;
     stock?: number;
     starRating?: string;
+    brand?: string;
+    model?: string;
+    color?: string;
     features?: string[]
 }

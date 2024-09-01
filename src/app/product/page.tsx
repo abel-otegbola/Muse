@@ -14,7 +14,7 @@ export default function ProductPage () {
     const searchParams = useSearchParams();
     const id = searchParams.get("id") || 0
     const { cart, setCart, wishlist, setWishlist } = useContext(storeContext)
-    const [product, setProduct] = useState<IProductProps>({ id: "0",  title: "", description: "", categories: [],tags: [], img: "", price: 0 })
+    const [product, setProduct] = useState<IProductProps>({ id: "0",  title: "", description: "", categories: [],tags: [], img: "", price: 0, brand: "", model: "", color: "", features: [] })
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -125,13 +125,28 @@ export default function ProductPage () {
                             </div>
                         </div>
                     </div> 
-                    <h2 className="border border-transparent border-b-gray-200 dark:border-b-gray-100/[0.1] mt-20 text-purple text-semibold uppercase">Related Products</h2>
-                    <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-4 gap-2 py-[40px] ">
-                        {/* {
-                            MusicInstruments.filter((item: any) => item.category === product.category && item.id !== id).slice(0,5).map((product: any) => (
-                            <ProductCard key={product.id} product={product.data} />
-                        ))
-                        } */}
+
+
+                    <div className="px-[5%]">
+                        <h2 className="border border-transparent border-b-gray/[0.4] text-lg mt-10 font-semibold">Product Details</h2>
+                        
+                        <div className="flex flex-col gap-2 py-4">
+                            <p className="rounded py-1 w-fit"><span className="font-bold">Brand:</span> {product?.brand + ", "}</p>
+                            <p className="rounded py-1 w-fit"><span className="font-bold">Model:</span> {product?.model + ", "}</p>
+                            <p className="rounded py-1 w-fit"><span className="font-bold">Color:</span> {product?.color + ", "}</p>
+                            <p className="rounded py-1 w-fit"><span className="font-bold">Features:</span> {product?.features + ", "}</p>
+                        </div>                            
+                    </div>
+
+                    <div className="px-[5%]">
+                        <h2 className="border border-transparent border-b-gray/[0.4] text-lg mt-20 font-semibold">Related Products</h2>
+                        <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-4 gap-2 py-[40px] ">
+                            {/* {
+                                MusicInstruments.filter((item: any) => item.category === product.category && item.id !== id).slice(0,5).map((product: any) => (
+                                <ProductCard key={product.id} product={product.data} />
+                            ))
+                            } */}
+                        </div>
                     </div>
                 </div>
                 

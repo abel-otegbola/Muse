@@ -24,7 +24,7 @@ export default function Shoppage() {
               <p className="mb-2 text-center">Bri8 musicals find talented musicians for your next gig, learn from our expert instructors, buy, sell or rent musical instruments .</p>
               <div className="flex gap-2">
                 <Search placeholder="Search products" />
-                <Button onClick={() => {}}>Search</Button>
+                <Button >Search</Button>
               </div>
           </div>
 
@@ -33,7 +33,7 @@ export default function Shoppage() {
         <div className="flex justify-between md:px-[8%] p-8  ">
           <div className="flex items-center gap-2"></div>
           <div className="flex items-center gap-2">
-            <Button onClick={() => {}} variant="secondary"><Funnel size={16} /> Filter</Button>
+            <Button variant="secondary"><Funnel size={16} /> Filter</Button>
             <Dropdown name="Sort" onChange={setSort} value={sort} error={""} options={sortOptions} placeholder="Sort by" className="w-[100px]"/>
           </div>
         </div>
