@@ -10,7 +10,8 @@ export const MusicInstruments = [
         "brand": "Yamaha",
         "model": "FG800",
         "color": "Natural",
-        "features": ["Solid spruce top", "Mahogany back and sides", "Rosewood fingerboard", "Die-cast tuners"]
+        "features": ["Solid spruce top", "Mahogany back and sides", "Rosewood fingerboard", "Die-cast tuners"],
+        "condition": "Used"
     },
     {
         "id": "1",
@@ -23,7 +24,8 @@ export const MusicInstruments = [
         "brand": "Gibson",
         "model": "Les Paul Standard",
         "color": "Sunburst",
-        "features": ["Maple neck", "Mahogany body", "Humbucker pickups", "Grover tuners"]
+        "features": ["Maple neck", "Mahogany body", "Humbucker pickups", "Grover tuners"],
+        "condition": "Brand new"
     },
     {
         "id": "2",
@@ -36,7 +38,8 @@ export const MusicInstruments = [
         "brand": "Roland",
         "model": "FP-30",
         "color": "Black",
-        "features": ["88-key weighted action, 128-voice polyphony, Bluetooth connectivity"]
+        "features": ["88-key weighted action, 128-voice polyphony, Bluetooth connectivity"],
+        "condition": "Brand new"
     },
     {
         "id": "3",
@@ -49,7 +52,8 @@ export const MusicInstruments = [
         "brand": "Fender",
         "model": "Stratocaster",
         "color": "Sunburst",
-        "features": ["Maple neck, Alder body, Single-coil pickups, Vintage-style hardware"]
+        "features": ["Maple neck, Alder body, Single-coil pickups, Vintage-style hardware"],
+        "condition": "Few weeks used"
     },
     {
         "id": "4",
@@ -62,6 +66,7 @@ export const MusicInstruments = [
         "brand": "Yamaha",
         "model": "YV404",
         "color": "Natural",
-        "features": ["Solid spruce top, Flamed maple back and sides, Ebony fingerboard, Adjustable tailpiece"]
+        "features": ["Solid spruce top, Flamed maple back and sides, Ebony fingerboard, Adjustable tailpiece"],
+        "condition": "Refurbished"
     }
 ]

@@ -15,4 +15,5 @@ export interface IProductProps {
     model?: string;
     color?: string;
     features?: string[]
+    condition?: string
 }
