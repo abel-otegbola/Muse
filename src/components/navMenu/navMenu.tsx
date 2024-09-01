@@ -18,7 +18,7 @@ export default function Menu ({ setOpen }: { setOpen: Dispatch<SetStateAction<bo
     const menuRef = useOutsideClick(setOpen, false)
 
     return (
-        <div ref={menuRef} className="flex flex-col gap-2 p-2 rounded shadow-md border border-gray/[0.3] absolute top-12 right-0 bg-white">
+        <div ref={menuRef} className="flex flex-col gap-2 p-2 w-[150px] rounded shadow-md border border-gray/[0.3] absolute top-12 right-0 bg-white">
         { 
             menu.map(item => (
                 <Link
@@ -29,7 +29,7 @@ export default function Menu ({ setOpen }: { setOpen: Dispatch<SetStateAction<bo
                     `}
                 >
                     <span className="md:text-lg text-2xl opacity-[0.6]">{item.icon}</span>
-                    <span className="md:inline md:text-[12px] opacity-[0.6] text-[8px]">{item.title}</span>
+                    <span className="md:inline opacity-[0.6]">{item.title}</span>
                 </Link>
             )) 
         }

@@ -1,7 +1,6 @@
 'use client'
 import Image from "next/image";
 import Tab from "../tab/tab";
-import Button from "../button/button";
 import Search from "../search/search";
 import { Guitar, House, ListMagnifyingGlass, ShoppingCart, User } from "@phosphor-icons/react";
 import { useState } from "react";
