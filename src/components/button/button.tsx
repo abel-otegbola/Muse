@@ -8,7 +8,7 @@ interface buttonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     href?: string;
     size?: "full";
     disabled?: boolean,
-    onClick?: () => void,
+    onClick: () => void,
     children: ReactNode
 }
 
@@ -27,7 +27,7 @@ export default function Button({ variant, className, href, size, disabled, onCli
             ${size === "full" ? "w-full" : "w-fit"}
         `}
         disabled={disabled}
-        onClick={() => href ? router.push(href) : onClick}
+        onClick={() => href ? router.push(href) : onClick()}
         >
             { children }
         </button>
