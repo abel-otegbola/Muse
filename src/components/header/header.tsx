@@ -3,8 +3,10 @@ import Image from "next/image";
 import Tab from "../tab/tab";
 import Search from "../search/search";
 import { Guitar, House, ListMagnifyingGlass, ShoppingCart, User } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Menu from "../navMenu/navMenu";
+import Link from "next/link";
+import { storeContext } from "@/context/useStore";
 
 type navTab =  {
     id: number | string,
@@ -15,6 +17,7 @@ type navTab =  {
 
 export default function Header() {
     const [toggleMenu, setToggleMenu] = useState(false)
+    const { cart } = useContext(storeContext)
 
     const navTabs: navTab[] = [
         { id: 0, label: "Home", to: "/", icon: <House /> },
@@ -39,7 +42,11 @@ export default function Header() {
                 <div className="md:block hidden flex-1">
                     <Search placeholder="Search Products, Gigs and Talents" className="" />
                 </div>
-                <button className="p-2 bg-gray/[0.3] rounded-full"><ShoppingCart size={16}/></button>
+                <Link href="/cart" className="p-2 bg-gray/[0.3] rounded-full relative">
+                    <ShoppingCart size={16}/>
+                    <sup className="absolute top-[0px] right-[0px] text-emerald-500 text-[8px] bg-white p-[4px] py-[6px] rounded-full">{cart.length}
+                    </sup>
+                </Link>
                 <button className="p-1 bg-gray/[0.3] rounded-full outline outline-primary/[0.2] outline-offset-1" onClick={() => setToggleMenu(!toggleMenu)}><User size={16}/></button>
                 {
                     toggleMenu && <Menu setOpen={setToggleMenu} />
