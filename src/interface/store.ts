@@ -4,11 +4,12 @@ export interface IProductProps {
     img: string;
     price: number;
     discount?: number;
-    categories: string;
+    categories: string[];
     tags: string[];
     description: string;
     updatedAt?: string;
     createdAt?: string;
     stock?: number;
     starRating?: string;
+    features?: string[]
 }
