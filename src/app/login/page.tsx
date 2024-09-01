@@ -20,7 +20,7 @@ export default function Loginpage() {
     return (
         <div className="min-h-[500px] flex mt-[3%] gap-12 sm:items-center justify-center">
             <div className="sm:block hidden w-[400px] h-[450px] relative rounded-[20px]">
-              <Image src={"/guitarist-bass.jpg"} alt="guitarist" fill sizes={"100%"} objectFit="cover" className="rounded-[20px]" />
+              <Image src={"/guitarist-bass.jpg"} alt="guitarist" fill sizes={"100%"} className="rounded-[20px] bg-cover" />
             </div>
 
             <div className="sm:w-[476px] w-full p-12">
