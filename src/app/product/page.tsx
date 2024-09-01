@@ -13,45 +13,13 @@ import { LoaderIcon } from "react-hot-toast";
 export default function ProductPage () {
     const searchParams = useSearchParams();
     const id = searchParams.get("id") || 0
-    const { cart, setCart, wishlist, setWishlist } = useContext(storeContext)
+    const { cart, toggleCart, wishlist, toggleWishlist, changeQuantity } = useContext(storeContext)
     const [product, setProduct] = useState<IProductProps>({ id: "0",  title: "", description: "", categories: [],tags: [], img: "", price: 0, brand: "", model: "", color: "", features: [] })
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setProduct(MusicInstruments.filter(item => item.id === id)[0])
     }, [id])
-
-    const addToCart = (id: number | string | null) => {
-        setCart([ {id, quantity: 1}, ...cart ])
-    }
-
-    const removeFromCart = (id: number | string | null) => {
-        setCart(cart.filter((item: any) => item.id !== id))
-    }
-
-    const changeQuantity = (id: number | string | null, action: string) => {
-        let newList = cart.map((item: any) => {
-            if(item.id === id) {
-                if(action === "minus" && item.quantity > 1) {
-                    item.quantity -= 1
-                }
-                else if(action === "plus") {
-                    item.quantity += 1
-                }
-                return item
-            }
-            else return item;
-        })
-        setCart(newList)
-    }
-
-    const addToWishlist = (id: number | string | null) => {
-        setWishlist([ id, ...wishlist ])
-    }
-
-    const removeFromWishlist = (id: number | string | null) => {
-        setWishlist(wishlist.filter((item: any) => item !== id))
-    }
 
 
     return (<div className="md:p-[8%] p-[3%]">
@@ -70,7 +38,7 @@ export default function ProductPage () {
                             }
                         </Slide> */}
                         
-                            <Image src={"/" +product.img} alt={product.title} fill sizes="100%" className="bg-cover" />
+                            <Image src={"/" +product.img || "guitarist.jpg"} alt={product.title} fill sizes="100%" className="bg-cover" />
                         </div>
                         <div className="md:px-[3%] px-4 md:py-0 py-6 md:w-[50%] w-full">
                             <h2 className="py-2 md:text-[40px] text-[28px] font-bold">{product?.title}</h2>
@@ -81,9 +49,9 @@ export default function ProductPage () {
                                 <div>
                                 {
                                     wishlist.indexOf(id) === -1 ? 
-                                    <button className="h-[40px] text-gray-300 flex items-center gap-2" onClick={() => addToWishlist(id) }><Heart size={16}/>Save to wishlist</button> 
+                                    <button className="h-[40px] text-gray-300 flex items-center gap-2" onClick={() => toggleWishlist(id) }><Heart size={16}/>Save to wishlist</button> 
                                     : 
-                                    <button className=" h-[40px] text-red-500 flex items-center gap-2" onClick={() => removeFromWishlist(id)}><Heart size={16}/> Remove from wishlist</button> 
+                                    <button className=" h-[40px] text-red-500 flex items-center gap-2" onClick={() => toggleWishlist(id)}><Heart size={16}/> Remove from wishlist</button> 
                                 }
                                 </div>
                             </div>
@@ -107,10 +75,10 @@ export default function ProductPage () {
                                 <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-white">
                                 {
                                     cart.map((item: any) => item.id).indexOf(id) === -1 ? 
-                                    <Button size="full" onClick={() => addToCart(id) } >Add to Cart</Button>
+                                    <Button size="full" onClick={() => toggleCart(id) } >Add to Cart</Button>
                                     : 
                                     <div className="flex gap-2">
-                                        <Button size="full" variant="secondary" onClick={() => removeFromCart(id)} >Remove From Cart</Button>
+                                        <Button size="full" variant="secondary" onClick={() => toggleCart(id)} >Remove From Cart</Button>
                                         <div className="flex items-center gap-1 animate-zoom-in ">
                                             <button className="h-[40px] p-[12px]" onClick={() => changeQuantity(id, "minus")}><Minus /></button>
                                             <p className="flex items-center justify-center h-[40px] p-[12px] py-1 rounded bg-transparent w-[70px] border border-gray/[0.5]">{cart.filter((item: any) => item.id === id).map((item: any) => item.quantity)}</p>
