@@ -19,7 +19,7 @@ export default function ProductCard({ product }: {product: IProductProps}) {
                 <button className="absolute top-2 right-2 p-1" onClick={() => toggleWishlist(product.id) }>
                     { wishlist.indexOf(product.id) !== -1 ? <Heart size={16} color="red" /> : <Heart size={16} className=" opacity-[0.3] hover:opacity-[1]"/> }
                 </button>
-                <span className="absolute bottom-2 left-2 opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] bg-primary/[0.1] border border-gray/[0.8] rounded">{product?.condition}</span>
+                <span className="absolute bottom-2 left-2 opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] border border-gray/[0.8] rounded">{product?.condition}</span>
             </div>
             <div className="flex flex-col gap-2 px-1">
                 <Link href={"/product?id=" + product.id}>

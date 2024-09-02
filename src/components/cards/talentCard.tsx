@@ -1,13 +1,9 @@
-import { storeContext } from "@/context/useStore";
-import { currencyFormatter } from "@/helpers/currencyConverter";
 import { ITalentsProps } from "@/interface/store";
 import { FacebookLogo, Heart, InstagramLogo, TwitterLogo } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
 
 export default function TalentCard({ talent }: {talent: ITalentsProps}) {
-    const { wishlist, toggleWishlist } = useContext(storeContext)
 
     return (
         <div className="flex flex-col gap-4 p-2 rounded-[8px] border border-gray/[0.5]">
@@ -15,17 +11,13 @@ export default function TalentCard({ talent }: {talent: ITalentsProps}) {
             <div className="w-full h-[200px] relative rounded bg-gray/[0.3]">
                 <Link href={"/talent?id=" + talent.id}>
                     <Image src={talent.img} sizes="100%" fill alt={talent.name} className="rounded object-cover" />
-                </Link>
-                <button className="absolute top-2 right-2 p-1" onClick={() => toggleWishlist(talent.id) }>
-                    { wishlist.indexOf(talent.id) !== -1 ? <Heart size={16} color="red" /> : <Heart size={16} className=" opacity-[0.3] hover:opacity-[1]"/> }
-                </button>
-                
+                </Link>                
             </div>
             <div className="flex flex-col gap-3 px-1">
                 <div className="flex items-center gap-2">
                     {
                         talent.instruments?.map((item: string, i: number) => (
-                            <span key={i} className="opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] bg-primary/[0.1] border border-gray/[0.8] rounded">{item}</span>
+                            <span key={i} className="opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] border border-gray/[0.8] rounded">{item}</span>
                         ))
                     }
                 </div>

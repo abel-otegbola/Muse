@@ -23,16 +23,16 @@ export default function Homepage() {
 
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 md:px-[8%] px-8 py-[3%]">
+        <div className="grid lg:grid-cols-3 gap-6 md:px-[8%] py-[3%]">
           {
             [ 
-              { id: 0, text: "Buy or Rent Musical Instruments ", img: "buy", actionHref: "shop", actionText: "Shop products" },
-              { id: 1, text: "Hire Talented Musicians ", img: "hire", actionHref: "talents", actionText: "Find talents" },
-              { id: 2, text: "Learn Music From Our Courses ", img: "learn", actionHref: "learn", actionText: "Start learning" },
+              { id: 0, text: "Buy or Rent Musical Instruments ", img: "/buy.png", actionHref: "shop", actionText: "Shop products", color: "text-primary" },
+              { id: 1, text: "Hire Talented Musicians ", img: "/hire.png", actionHref: "talents", actionText: "Find talents", color: "text-black" },
+              { id: 2, text: "Learn Music From Our Courses ", img: "/learn.png", actionHref: "learn", actionText: "Start learning", color: "text-cyan-800" },
             ]
             .map(item => (
-              <div key={item.id} className={`flex flex-col justify-between h-[260px] p-8 text-gray rounded-[20px] object-cover`} style={{ backgroundImage: `url("/${item.img}.png")` }}>
-                <h2 className="text-[18px] w-[70%] font-bold">{item.text}</h2>
+              <div key={item.id} className={`flex flex-col justify-between h-[260px] p-8 ${item.color} md:rounded-[20px] bg-cover border border-gray/[0.5]`} style={{ backgroundImage: `url("${item.img}")` }}>
+                <h2 className="text-[18px] md:w-[70%] w-[50%] font-bold">{item.text}</h2>
                 <Link className="flex items-center gap-2 px-6 py-2 border border-gray rounded-full w-fit" href={item.actionHref}>{item.actionText} <ArrowRight weight="fill" size={16}/></Link>
               </div>
             ))
