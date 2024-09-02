@@ -31,7 +31,7 @@ export default function Homepage() {
               { id: 2, text: "Learn Music From Our Courses ", img: "/learn.png", actionHref: "learn", actionText: "Start learning", color: "text-cyan-800" },
             ]
             .map(item => (
-              <div key={item.id} className={`flex flex-col justify-between h-[260px] p-8 ${item.color} md:rounded-[20px] bg-cover border border-gray/[0.5]`} style={{ backgroundImage: `url("${item.img}")` }}>
+              <div key={item.id} className={`flex flex-col justify-between h-[260px] p-8 ${item.color} bg-gray/[0.3] md:rounded-[20px] bg-cover border border-gray/[0.5]`} style={{ backgroundImage: `url("${item.img}")` }}>
                 <h2 className="text-[18px] md:w-[70%] w-[50%] font-bold">{item.text}</h2>
                 <Link className="flex items-center gap-2 px-6 py-2 border border-gray rounded-full w-fit" href={item.actionHref}>{item.actionText} <ArrowRight weight="fill" size={16}/></Link>
               </div>

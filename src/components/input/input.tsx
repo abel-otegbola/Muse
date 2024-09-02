@@ -1,16 +1,15 @@
 'use client'
 
 import { Eye, EyeSlash } from "@phosphor-icons/react";
-import { useState } from "react";
+import { InputHTMLAttributes, useState } from "react";
 
-interface inputProps {
+interface inputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     disabled?: boolean;
     label?: string;
     name: string;
     type: string;
     value: string | number;
-    onChange: (value: string) => void;
     error: string | undefined;
     placeholder?: string;
     leftIcon?: any
@@ -42,7 +41,7 @@ export default function Input({ className, disabled, label, name, value, type, o
                     placeholder={placeholder}
                     onFocus={() => setFocus(true)}
                     onBlur={() => setFocus(false)}
-                    onChange={(e) => onChange(e.target.value)}
+                    onChange={onChange}
                 />
 
                 { error && !focus ? <p className="absolute right-2 px-2 text-[12px] bg-white/[0.8] backdrop-blur-sm">{error}</p> : "" }

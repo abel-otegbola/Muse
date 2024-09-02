@@ -4,8 +4,9 @@ import { app } from "../firebase/firebase";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import { Toaster, toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-export const AuthContext = createContext({});
+export const AuthContext = createContext<any>({});
 
 const auth = getAuth(app)
 
@@ -13,6 +14,7 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
     const [user, setUser] = useLocalStorage("user", null);
     const [popup, setPopup] = useState({ type: "", msg: "" });
     const [loading, setLoading] = useState(false);
+    const router = useRouter()
 
 
     const signIn = (email: string, password: string) => {
@@ -22,6 +24,7 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
             const user = userCredential.user;
             setPopup({ type: "success", msg: "Login Successful" })
             setLoading(false)
+            router.push("/dashboard")
         })
         .catch((error) => {
             setPopup({ type: "error", msg: error.message.replace("Firebase: Error", "") })
@@ -29,13 +32,14 @@ const AuthProvider = ({ children }: { children: ReactNode}) => {
         });
     }
 
-    const signUp = (email: string, password: string, username: string) => {
+    const signUp = (email: string, password: string) => {
         setLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             setPopup({ type: "success", msg:  "Signup Successful" })
             setLoading(false)
+            router.push("/dashboard")
         })
         .catch((error) => {
             setPopup({ type: "error", msg:  error.message.replace("Firebase: Error", "") })

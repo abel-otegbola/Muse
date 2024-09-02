@@ -5,13 +5,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDj2-YvUs4-VdgYPzkTp7FHjQ8H0eLMp6Y",
-    authDomain: "devlinks-hng-8.firebaseapp.com",
-    projectId: "devlinks-hng-8",
-    storageBucket: "devlinks-hng-8.appspot.com",
-    messagingSenderId: "290009761564",
-    appId: "1:290009761564:web:3e3b2fea98e0ca622a9cd9",
-    measurementId: "G-QWMRE0DQG8"
+    apiKey: "AIzaSyCvW7ZZmA99LrN-HZWj2qe_0ifhUHkZ3JE",
+    authDomain: "muse-hub.firebaseapp.com",
+    projectId: "muse-hub",
+    storageBucket: "muse-hub.appspot.com",
+    messagingSenderId: "747567228840",
+    appId: "1:747567228840:web:5eac804c4d3c8a2e519f9d",
+    measurementId: "G-HB636L79CD"
 };
 
 // Initialize Firebase

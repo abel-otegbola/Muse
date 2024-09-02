@@ -1,7 +1,11 @@
 'use client'
 import React, { Suspense } from "react";
 
-const Layout = ({ children }: any) => {
+export default function RootLayout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
 
     return (
         <Suspense>
@@ -9,5 +13,3 @@ const Layout = ({ children }: any) => {
         </Suspense>
     );
 };
-
-export default Layout;
