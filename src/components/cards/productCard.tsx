@@ -14,7 +14,7 @@ export default function ProductCard({ product }: {product: IProductProps}) {
 
             <div className="w-full h-[230px] relative rounded bg-gray/[0.3]">
                 <Link href={"/product?id=" + product.id}>
-                    <Image src={"/" +product.img} sizes="100%" fill alt={product.title} className="rounded bg-cover" />
+                    <Image src={"/" +product.img} sizes="100%" fill alt={product.title} className="rounded object-cover" />
                 </Link>
                 <button className="absolute top-2 right-2 p-1" onClick={() => toggleWishlist(product.id) }>
                     { wishlist.indexOf(product.id) !== -1 ? <Heart size={16} color="red" /> : <Heart size={16} className=" opacity-[0.3] hover:opacity-[1]"/> }

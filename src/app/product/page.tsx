@@ -38,7 +38,7 @@ export default function ProductPage () {
                             }
                         </Slide> */}
                         
-                            <Image src={"/" +product.img || "guitarist.jpg"} alt={product.title} fill sizes="100%" className="bg-cover" />
+                            <Image src={"/" +product.img || "guitarist.jpg"} alt={product.title} fill sizes="100%" className="object-cover" />
                         </div>
                         <div className="md:px-[3%] px-4 md:py-0 py-6 md:w-[50%] w-full">
                             <h2 className="py-2 md:text-[40px] text-[28px] font-bold">{product?.title}</h2>

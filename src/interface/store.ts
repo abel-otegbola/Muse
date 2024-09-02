@@ -17,3 +17,15 @@ export interface IProductProps {
     features?: string[]
     condition?: string
 }
+
+export interface ITalentsProps {
+    id: string;
+    name: string;
+    img: string;
+    genres: string[];
+    instruments?: string[];
+    biography: string;
+    available: boolean;
+    updatedAt?: string;
+    createdAt?: string;
+}
