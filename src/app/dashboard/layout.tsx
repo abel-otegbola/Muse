@@ -37,7 +37,7 @@ export default function DashboardLayout({
                                     key={item.id}
                                     href={item.to}
                                     className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] dark:hover:border-gray/[0.2] hover:text-primary font-semibold rounded-[4px]
-                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.08] text-primary border border-gray/[0.5] dark:border-gray/[0.2] " : "border-transparent "}
+                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.05] text-primary border border-gray/[0.5] dark:border-gray/[0.2] " : "border-transparent "}
                                     `}
                                 >
                                     <span className="text-lg opacity-[0.6]">{item.icon}</span>

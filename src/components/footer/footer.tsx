@@ -33,7 +33,7 @@ function Footer() {
                     <a href="mailto:support@ennovate.com" className="block py-1">Support@muse.com</a>
                 </ul>
             </div>
-            <div className="bg-[#000]/[0.2] dark:bg-[#000]/[0.8] text-white text-center">
+            <div className="bg-[#000]/[0.2] dark:bg-[#000]/[0.8] text-white text-center md:mb-0 mb-[65px]">
                 <p className="px-[3%] py-3 flex items-center gap-2 justify-center">muse &copy; {new Date().getFullYear()}</p>
             </div>
         </footer>
