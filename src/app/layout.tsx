@@ -21,7 +21,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-        <body className={inter.className + " text-[12px] text-secondary"}>
+        <body className={inter.className + " text-[12px] text-secondary dark:bg-dark dark:text-gray"}>
           <AuthProvider>
             <StoreContextProvider>
               <CheckDashboard />

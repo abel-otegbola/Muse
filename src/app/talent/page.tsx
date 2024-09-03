@@ -23,7 +23,7 @@ export default function TalentPage () {
             loading ? <LoaderIcon /> :
                 <div key={id}>
                     <div className="relative flex flex-wrap justify-center items-center my-2 rounded gap-[5%]">
-                        <div className="md:w-[400px] w-full h-[472px] relative bg-gray/[0.3]">
+                        <div className="md:w-[400px] w-full h-[472px] relative bg-gray/[0.3] dark:bg-gray/[0.08]">
                         {/* <Slide arrows={false} indicators={true} cssClass="" easing="linear" transitionDuration={500} duration={3000}>
                             {
                                 [talent.thumbnail, ...talent.images].map((img: any, i: number) => (

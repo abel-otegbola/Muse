@@ -20,10 +20,10 @@ export default function Cartpage() {
         
         <div className="min-h-[70vh]">
             
-            <div className="md:px-[8%] md:py-[2%] w-full p-8 flex flex-col items-center justify-start bg-tetiary gap-5 lg:flex-nowrap flex-wrap">
+            <div className="md:px-[8%] md:py-[2%] w-full p-8 flex flex-col items-center justify-start bg-tetiary dark:bg-gray/[0.08] gap-5 lg:flex-nowrap flex-wrap">
                 <div className="flex flex-col gap-3 items-center my-[5%]">
                     <h1 className="xl:text-[40px] text-center text-[32px] font-bold leading-[120%]">Your Cart </h1>
-                    <p className="p-1 px-2 bg-primary/[0.1] border border-gray/[0.8] rounded">{cart.length} { cart.length === 1 ? "Item" : "Items" }</p>
+                    <p className="p-1 px-2 bg-primary/[0.1] border border-gray /[0.8] rounded">{cart.length} { cart.length === 1 ? "Item" : "Items" }</p>
                 </div>
             </div>
 
@@ -32,9 +32,9 @@ export default function Cartpage() {
                 {   
                     products.filter((item: any) => cart.map((item: any) => item.id).indexOf(item.id) !== -1 ).length > 0 ?
                     products.filter((item: any) => cart.map((item: any) => item.id).indexOf(item.id) !== -1 ).map((product: any) => (
-                        <div key={product?.id} className="relative bg-white flex p-2 mx-2 rounded border border-gray/[0.7]">
+                        <div key={product?.id} className="relative bg-white dark:bg-dark dark:text-gray flex p-2 mx-2 rounded border border-gray/[0.7] dark:border-gray/[0.08]">
                             <a href={`/product?id=${product?.id}`}>
-                                <Image src={"/" + product?.img} alt={product?.title} width={100} height={150} className="rounded bg-gray/[0.3] w-[100px] border border-gray/[0.5]" />
+                                <Image src={"/" + product?.img} alt={product?.title} width={100} height={150} className="rounded bg-gray/[0.3] dark:bg-gray/[0.05] w-[100px] border border-gray/[0.5] dark:border-gray/[0.2]" />
                             </a>
                             <div className="pl-6 py-2 w-full flex flex-col justify-between">
                                 <a href={`/product?id=${product?.id}`} className="mr-8">{product?.title}</a>
@@ -45,7 +45,7 @@ export default function Cartpage() {
                                     </div>
                                     <div className="flex items-center animate-zoom-in text-[10px]">
                                         <button className="h-[40px] p-[8px] rounded" onClick={() => changeQuantity(product.id, "minus")}><Minus /></button>
-                                        <p className="flex items-center justify-center h-[40px] p-[8px] py-[5px] text-center rounded w-[50px] text-[10px] border border-gray/[0.6]">{cart.filter((item: any) => item.id === product?.id).map((item: any) => item.quantity)}</p>
+                                        <p className="flex items-center justify-center h-[40px] p-[8px] py-[5px] text-center rounded w-[50px] text-[10px] border border-gray /[0.6]">{cart.filter((item: any) => item.id === product?.id).map((item: any) => item.quantity)}</p>
                                         <button className="h-[40px] p-[8px] rounded"  onClick={() => changeQuantity(product.id, "plus")}><Plus /></button>
                                     </div>
                                 </div>

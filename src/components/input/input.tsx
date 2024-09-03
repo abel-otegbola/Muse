@@ -24,13 +24,13 @@ export default function Input({ className, disabled, label, name, value, type, o
         <div className="flex flex-col w-full gap-1">
             { label ? <label htmlFor={name} className="text-[12px]">{label}</label> : "" }
 
-            <div className={`flex items-center gap-2 relative rounded-[4px] bg-white w-full h-[40px] p-1 px-3 border border-gray duration-500
-                ${error && !focus ? "border-red text-red" : "border-gray"}
-                ${focus ? "border-primary shadow-input-active" : "border-gray"}
+            <div className={`flex items-center gap-2 relative rounded-[4px] bg-white dark:bg-dark dark:text-gray w-full h-[40px] border p-1 px-3 duration-500 
+                ${error && !focus ? "border-red text-red " : "border-gray dark:border-gray/[0.2] "}
+                ${focus ? "border-primary shadow-input-active" : ""}
             `}>
                 <span className={!focus ? "opacity-[0.4]": "text-primary"}>{ leftIcon }</span>
                 <input 
-                    className={` p-1 w-full outline-none
+                    className={` p-1 w-full outline-none bg-transparent
                         ${className} 
                         ${disabled ? "opacity-[0.25]" : ""}
                     `}
@@ -44,7 +44,7 @@ export default function Input({ className, disabled, label, name, value, type, o
                     onChange={onChange}
                 />
 
-                { error && !focus ? <p className="absolute right-2 px-2 text-[12px] bg-white/[0.8] backdrop-blur-sm">{error}</p> : "" }
+                { error && !focus ? <p className="absolute right-2 px-2 text-[12px] bg-white dark:bg-dark text-red backdrop-blur-sm">{error}</p> : "" }
                 { type === "password" ? 
                     <span tabIndex={1} className="p-2 cursor-pointer" title="toggle show password" aria-checked={show} onClick={() => setShow(!show)}>{ show ? <Eye /> : <EyeSlash /> }</span>
                 : "" }

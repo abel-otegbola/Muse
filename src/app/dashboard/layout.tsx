@@ -28,7 +28,7 @@ export default function DashboardLayout({
     ]
         return (
             <div className="flex min-h-[90vh]">
-                <div className="flex flex-col justify-between md:w-[250px] p-2 border border-gray/[0.3] bg-white">
+                <div className="flex flex-col justify-between md:w-[250px] p-2 border border-gray/[0.3] dark:border-gray/[0.08] bg-white dark:bg-dark dark:text-gray">
                     <div className="flex flex-col gap-2 p-2 w-full rounded " onMouseOver={() => setOpenTablet(true)} onMouseOut={() => setOpenTablet(false)}>
                         <p className="opacity-[0.4] font-bold pt-4 pb-2 md:block hidden">GENERAL</p>
                         { 
@@ -36,12 +36,12 @@ export default function DashboardLayout({
                                 <Link
                                     key={item.id}
                                     href={item.to}
-                                    className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] hover:text-primary font-semibold rounded-[4px]
-                                        ${pathname === item.to ? "bg-tetiary text-primary border border-gray/[0.5] " : "border-transparent "}
+                                    className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] dark:hover:border-gray/[0.2] hover:text-primary font-semibold rounded-[4px]
+                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.08] text-primary border border-gray/[0.5] dark:border-gray/[0.2] " : "border-transparent "}
                                     `}
                                 >
                                     <span className="text-lg opacity-[0.6]">{item.icon}</span>
-                                    <span className="opacity-[0.6] md:block hidden">{item.title}</span>
+                                    <span className="md:block hidden">{item.title}</span>
                                 </Link>
                             )) 
                         }
@@ -51,12 +51,12 @@ export default function DashboardLayout({
                                 <Link
                                     key={item.id}
                                     href={item.to}
-                                    className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] hover:text-primary font-semibold rounded-[4px]
-                                        ${pathname === item.to ? "bg-tetiary text-primary border border-gray/[0.5] " : "border-transparent "}
+                                    className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] dark:hover:border-gray/[0.2] hover:text-primary font-semibold rounded-[4px]
+                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.08] text-primary border border-gray/[0.5] dark:border-gray /[0.2] " : "border-transparent "}
                                     `}
                                 >
                                     <span className="text-lg opacity-[0.6]">{item.icon}</span>
-                                    <span className="opacity-[0.6] md:block hidden">{item.title}</span>
+                                    <span className="md:block hidden">{item.title}</span>
                                 </Link>
                             )) 
                         }
@@ -64,7 +64,7 @@ export default function DashboardLayout({
                     </div>  
                     
                 </div>
-                <div className="">
+                <div className="flex-1">
                     {children}
                 </div>
             </div>

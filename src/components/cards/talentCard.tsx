@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function TalentCard({ talent }: {talent: ITalentsProps}) {
 
     return (
-        <div className="flex flex-col gap-4 p-2 rounded-[8px] border border-gray/[0.5]">
+        <div className="flex flex-col gap-4 p-2 rounded-[8px] border border-gray/[0.5] dark:border-gray/[0.08]">
 
-            <div className="w-full h-[200px] relative rounded bg-gray/[0.3]">
+            <div className="w-full h-[200px] relative rounded bg-gray/[0.3] dark:bg-gray/[0.08]">
                 <Link href={"/talent?id=" + talent.id}>
                     <Image src={talent.img} sizes="100%" fill alt={talent.name} className="rounded object-cover" />
                 </Link>                
@@ -17,7 +17,7 @@ export default function TalentCard({ talent }: {talent: ITalentsProps}) {
                 <div className="flex items-center gap-2">
                     {
                         talent.instruments?.map((item: string, i: number) => (
-                            <span key={i} className="opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] border border-gray/[0.8] rounded">{item}</span>
+                            <span key={i} className="opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] border border-gray /[0.8] rounded">{item}</span>
                         ))
                     }
                 </div>

@@ -18,7 +18,7 @@ export default function Talentspage() {
 
     return (
       <main>
-        <div className="md:px-[8%] md:py-[3%] p-8 flex flex-col items-center justify-start bg-tetiary gap-5 lg:flex-nowrap flex-wrap">
+        <div className="md:px-[8%] md:py-[3%] p-8 flex flex-col items-center justify-start bg-tetiary dark:bg-gray/[0.08] gap-5 lg:flex-nowrap flex-wrap">
           
           <div className="flex flex-col gap-3 items-center my-[5%] md:w-[80%]">
               <h1 className="xl:text-[40px] text-center text-[32px] font-bold leading-[120%]">Hire Expert Musicians Around You</h1>

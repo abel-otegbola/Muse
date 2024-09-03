@@ -20,13 +20,13 @@ export default function Menu ({ setOpen }: { setOpen: Dispatch<SetStateAction<bo
     const menuRef = useOutsideClick(setOpen, false)
 
     return (
-        <div ref={menuRef} className="flex flex-col gap-2 p-2 w-[150px] rounded shadow-md border border-gray/[0.3] absolute top-12 right-0 bg-white">
+        <div ref={menuRef} className="flex flex-col gap-2 p-2 w-[150px] rounded shadow-md border border-gray/[0.3] dark:border-gray/[0.1] absolute top-12 right-0 bg-white dark:bg-dark dark:text-gray">
             {
                 user ? 
                 <Link
                     href={"/dashboard"}
                     className={`flex items-center gap-2 h-[32px] p-[8px] hover:text-primary font-semibold rounded-[4px]
-                        ${pathname === "/dashboard" ? "bg-tetiary text-primary" : ""}
+                        ${pathname === "/dashboard" ? "bg-tetiary dark:bg-gray/[0.08] text-primary" : ""}
                     `}
                 >
                     <span className="md:text-lg text-2xl opacity-[0.6]"><House/></span>
@@ -40,7 +40,7 @@ export default function Menu ({ setOpen }: { setOpen: Dispatch<SetStateAction<bo
                         key={item.id}
                         href={item.to}
                         className={`flex items-center gap-2 h-[32px] p-[8px] hover:text-primary font-semibold rounded-[4px]
-                            ${pathname === item.to ? "bg-tetiary text-primary" : ""}
+                            ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.08] text-primary" : ""}
                         `}
                     >
                         <span className="md:text-lg text-2xl opacity-[0.6]">{item.icon}</span>

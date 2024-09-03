@@ -27,7 +27,7 @@ export default function ProductPage () {
             loading ? <LoaderIcon /> :
                 <div key={id}>
                     <div className="relative flex flex-wrap justify-center items-center my-2 rounded gap-[5%]">
-                        <div className="md:w-[400px] w-full h-[472px] relative bg-gray/[0.3]">
+                        <div className="md:w-[400px] w-full h-[472px] relative bg-gray/[0.3] dark:bg-gray/[0.08]">
                         {/* <Slide arrows={false} indicators={true} cssClass="" easing="linear" transitionDuration={500} duration={3000}>
                             {
                                 [product.thumbnail, ...product.images].map((img: any, i: number) => (
@@ -72,7 +72,7 @@ export default function ProductPage () {
 
                             <div className="mt-6 flex items-center gap-4 py-4">
                                 
-                                <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-white">
+                                <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-white dark:bg-dark dark:text-gray">
                                 {
                                     cart.map((item: any) => item.id).indexOf(id) === -1 ? 
                                     <Button size="full" onClick={() => toggleCart(id) } >Add to Cart</Button>
@@ -81,7 +81,7 @@ export default function ProductPage () {
                                         <Button size="full" variant="secondary" onClick={() => toggleCart(id)} >Remove From Cart</Button>
                                         <div className="flex items-center gap-1 animate-zoom-in ">
                                             <button className="h-[40px] p-[12px]" onClick={() => changeQuantity(id, "minus")}><Minus /></button>
-                                            <p className="flex items-center justify-center h-[40px] p-[12px] py-1 rounded bg-transparent w-[70px] border border-gray/[0.5]">{cart.filter((item: any) => item.id === id).map((item: any) => item.quantity)}</p>
+                                            <p className="flex items-center justify-center h-[40px] p-[12px] py-1 rounded bg-transparent w-[70px] border border-gray /[0.5] dark:border-gray /[0.2]">{cart.filter((item: any) => item.id === id).map((item: any) => item.quantity)}</p>
                                             <button className="h-[40px] p-[12px]" onClick={() => changeQuantity(id, "plus")}><Plus /></button>
                                         </div> 
                                     </div>

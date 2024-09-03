@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Footer() {
     return (
-        <footer className="bg-black text-[#D9D9F2] mt-12">
+        <footer className="bg-black dark:bg-[#000]/[0.6] text-[#D9D9F2] mt-12">
             <div className="grid lg:grid-cols-4 grid-cols-2 text-[12px] gap-[30px] py-[30px] md:px-[8%] px-8 border border-transparent border-t-gray-700/[0.09] dark:border-t-gray-100/[0.09]">
                 <ul className="w-full">
                     <h2 className="py-2 font-semibold uppercase">Products</h2>
@@ -33,7 +33,7 @@ function Footer() {
                     <a href="mailto:support@ennovate.com" className="block py-1">Support@muse.com</a>
                 </ul>
             </div>
-            <div className="bg-[#000]/[0.2] text-white text-center">
+            <div className="bg-[#000]/[0.2] dark:bg-[#000]/[0.8] text-white text-center">
                 <p className="px-[3%] py-3 flex items-center gap-2 justify-center">muse &copy; {new Date().getFullYear()}</p>
             </div>
         </footer>
