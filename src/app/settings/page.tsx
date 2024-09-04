@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "@/customHooks/useLocaStorage";
 import { Desktop, Moon, Sun } from "@phosphor-icons/react";
-import Tab from "@/components/tab/tab";
 import Button from "@/components/button/button";
 
 interface Theme {
@@ -12,7 +11,7 @@ export interface Themes extends Array<Theme>{}
 
 
 function Settings() {
-    const [theme, setTheme] = useState(localStorage.theme)
+    const [theme, setTheme] = useState("")
     const [fontSize, setFontSize] = useLocalStorage("size", "14px")
 
     const themes: Themes = [
@@ -20,33 +19,32 @@ function Settings() {
         { id: 1, icon: <Sun />, title: "light" },
         { id: 2, icon: <Moon />, title: "dark" },
     ]
-
-    useEffect(() => {
-        if(theme === 'light') {
-            // Whenever the user explicitly chooses light mode
-            localStorage.theme = 'light'
-        }
-        else if(theme === 'dark') {
-            // Whenever the user explicitly chooses dark mode
-            localStorage.theme = 'dark'
-        }  
-        else {
-            // Whenever the user explicitly chooses to respect the OS preference
-            localStorage.removeItem('theme')
-        }  
-    }, [theme])
     
     useEffect(() => {
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
+            setTheme("dark")
         } else {
             document.documentElement.classList.remove('dark')
+            setTheme("light")
         }
         if(!localStorage.theme) {
             setTheme("System")
         }
     }, [theme])
+
+    const themeChange = (value: string) => {
+        setTheme(value)
+        if(value === 'light') {
+            localStorage.theme = 'light'
+        }
+        else if(value === 'dark') {
+            localStorage.theme = 'dark'
+        }  
+        else {
+            localStorage.removeItem('theme')
+        } 
+    }
 
     return (
         <>
@@ -64,7 +62,7 @@ function Settings() {
                             themes.map(item => {
                                 return (
                                     
-                                <Button key={item.id} variant={item.title !== theme ? "secondary" : "primary"} onClick={() => setTheme(item.title)} >
+                                <Button key={item.id} variant={item.title !== theme ? "tetiary" : "primary"} onClick={() => themeChange(item.title)} >
                                     <span className="md:text-lg text-2xl opacity-[0.6]">{item.icon}</span>
                                     <span className="md:inline md:text-[12px] md:opacity-[0.6] text-[8px]">{item.title}</span>
                                 </Button>
