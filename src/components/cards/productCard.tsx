@@ -5,6 +5,7 @@ import { CheckCircle, Heart, ShoppingCart } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function ProductCard({ product }: {product: IProductProps}) {
     const { cart, toggleCart, wishlist, toggleWishlist } = useContext(storeContext)
@@ -16,9 +17,9 @@ export default function ProductCard({ product }: {product: IProductProps}) {
                 <Link href={"/product?id=" + product.id}>
                     <Image src={"/" +product.img} sizes="100%" fill alt={product.title} className="rounded object-cover" />
                 </Link>
-                <button className="absolute top-2 right-2 p-1" onClick={() => toggleWishlist(product.id) }>
+                <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-8 w-8 rounded-full bg-background/80 p-1" onClick={() => toggleWishlist(product.id) }>
                     { wishlist.indexOf(product.id) !== -1 ? <Heart size={16} color="red" /> : <Heart size={16} className=" opacity-[0.3] hover:opacity-[1]"/> }
-                </button>
+                </Button>
                 <span className="absolute bottom-2 left-2 opacity-[0.7] hover:opacity-[1] p-1 px-2 text-[8px] border border-gray /[0.8] rounded">{product?.condition}</span>
             </div>
             <div className="flex flex-col gap-2 px-1">
@@ -27,7 +28,7 @@ export default function ProductCard({ product }: {product: IProductProps}) {
                 </Link>
                 <div className="flex items-center justify-between">
                     <h4 className="text-lg font-black">{currencyFormatter(product.price)}</h4>
-                    <button onClick={() => toggleCart(product.id)}> {cart.map((item: any) => item.id).indexOf(product.id) !== -1 ? <CheckCircle size={16} color="green"/> : <ShoppingCart size={16} color="gray" /> }</button>
+                    <Button variant="ghost" size="icon" onClick={() => toggleCart(product.id)}>{cart.map((item: any) => item.id).indexOf(product.id) !== -1 ? <CheckCircle size={16} color="green"/> : <ShoppingCart size={16} color="gray" /> }</Button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 'use client'
-import Button from "@/components/button/button";
+import { Button } from "@/components/ui/button";
 import { storeContext } from "@/context/useStore";
 import { MusicInstruments } from "@/data/musicInstruments";
 import { currencyFormatter } from "@/helpers/currencyConverter";
@@ -75,10 +75,10 @@ export default function ProductPage () {
                                 <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-white dark:bg-dark dark:text-gray">
                                 {
                                     cart.map((item: any) => item.id).indexOf(id) === -1 ? 
-                                    <Button size="full" onClick={() => toggleCart(id) } >Add to Cart</Button>
+                                    <Button className="w-full" onClick={() => toggleCart(id) } >Add to Cart</Button>
                                     : 
                                     <div className="flex gap-2">
-                                        <Button size="full" variant="secondary" onClick={() => toggleCart(id)} >Remove From Cart</Button>
+                                        <Button className="w-full" variant="secondary" onClick={() => toggleCart(id)} >Remove From Cart</Button>
                                         <div className="flex items-center gap-1 animate-zoom-in ">
                                             <button className="h-[40px] p-[12px]" onClick={() => changeQuantity(id, "minus")}><Minus /></button>
                                             <p className="flex items-center justify-center h-[40px] p-[12px] py-1 rounded bg-transparent w-[70px] border border-gray /[0.5] dark:border-gray /[0.2]">{cart.filter((item: any) => item.id === id).map((item: any) => item.quantity)}</p>

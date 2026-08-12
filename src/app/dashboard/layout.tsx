@@ -1,10 +1,10 @@
 "use client"
-import Button from "@/components/button/button";
 import { AuthContext } from "@/context/useAuth";
 import { Bell, Download, Gear, House, Question, User } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function DashboardLayout({
     children,
@@ -13,9 +13,6 @@ export default function DashboardLayout({
   }>) {
     const pathname = usePathname()
     const { logOut } = useContext(AuthContext)
-    const [openTablet, setOpenTablet] = useState(false)
-
-
     const general = [
         { id: 1, title: "Dashboard", to: "/dashboard", icon: <House /> },
         { id: 2, title: "Profile", to: "/dashboard/profile", icon: <User /> },
@@ -29,7 +26,7 @@ export default function DashboardLayout({
         return (
             <div className="flex min-h-[90vh]">
                 <div className="flex flex-col justify-between md:w-[250px] p-2 border border-gray/[0.3] dark:border-gray/[0.08] bg-white dark:bg-dark dark:text-gray">
-                    <div className="flex flex-col gap-2 p-2 w-full rounded " onMouseOver={() => setOpenTablet(true)} onMouseOut={() => setOpenTablet(false)}>
+                    <div className="flex flex-col gap-2 p-2 w-full rounded ">
                         <p className="opacity-[0.4] font-bold pt-4 pb-2 md:block hidden">GENERAL</p>
                         { 
                             general.map(item => (
@@ -52,7 +49,7 @@ export default function DashboardLayout({
                                     key={item.id}
                                     href={item.to}
                                     className={`flex items-center gap-2 h-[40px] p-3 border hover:border-gray/[0.5] dark:hover:border-gray/[0.2] hover:text-primary font-semibold rounded-[4px]
-                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.08] text-primary border border-gray/[0.5] dark:border-gray /[0.2] " : "border-transparent "}
+                                        ${pathname === item.to ? "bg-tetiary dark:bg-gray/[0.05] text-primary border border-gray/[0.5] dark:border-gray/[0.2] " : "border-transparent "}
                                     `}
                                 >
                                     <span className="text-lg opacity-[0.6]">{item.icon}</span>

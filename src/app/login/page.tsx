@@ -1,6 +1,6 @@
 'use client'
-import Button from "@/components/button/button";
-import Input from "@/components/input/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { AuthContext } from "@/context/useAuth";
 import { loginSchema } from "@/schema/auth";
 import { Envelope, LockKey, Spinner } from "@phosphor-icons/react";
@@ -43,11 +43,25 @@ export default function Loginpage() {
                                 <p className="mt-2 mb-3">Add your details below to get back into the app</p>
                             </div>
                             
-                            <Input name="email" label="Email address" value={values.email} onChange={handleChange} type="email" error={touched.email ? errors.email : ""} placeholder="e.g alex@email.com" leftIcon={<Envelope size={16}/>}/>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="email" className="text-sm font-medium">Email address</label>
+                                <div className="relative">
+                                    <Envelope size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                    <Input id="email" name="email" value={values.email} onChange={handleChange} type="email" placeholder="e.g alex@email.com" className="pl-10" />
+                                </div>
+                                {touched.email && errors.email ? <p className="text-xs text-red">{errors.email}</p> : null}
+                            </div>
 
-                            <Input name="password" label="Password" value={values.password} onChange={handleChange} type={"password"} error={touched.password ? errors.password : ""} placeholder="At least 8 characters" leftIcon={<LockKey size={16}/>}/>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="password" className="text-sm font-medium">Password</label>
+                                <div className="relative">
+                                    <LockKey size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                    <Input id="password" name="password" value={values.password} onChange={handleChange} type="password" placeholder="At least 8 characters" className="pl-10" />
+                                </div>
+                                {touched.password && errors.password ? <p className="text-xs text-red">{errors.password}</p> : null}
+                            </div>
 
-                            <Button size="full">{ isSubmitting || loading ? <Spinner size={16} className="animate-spin" /> : "Login"}</Button>
+                            <Button type="submit" className="w-full">{ isSubmitting || loading ? <Spinner size={16} className="animate-spin" /> : "Login"}</Button>
                             
                             <p className="text-center">Don&apos;t have an account? <Link href={"/register"} className="text-primary">Create account</Link></p>
                         </form>

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "@/customHooks/useLocaStorage";
 import { Desktop, Moon, Sun } from "@phosphor-icons/react";
-import Button from "@/components/button/button";
+import { Button } from "@/components/ui/button";
 
 interface Theme {
     id: number, icon: any, title: string
@@ -62,7 +62,7 @@ function Settings() {
                             themes.map(item => {
                                 return (
                                     
-                                <Button key={item.id} variant={item.title !== theme ? "tetiary" : "primary"} onClick={() => themeChange(item.title)} >
+                                <Button key={item.id} variant={item.title !== theme ? "tertiary" : "default"} onClick={() => themeChange(item.title)} >
                                     <span className="md:text-lg text-2xl opacity-[0.6]">{item.icon}</span>
                                     <span className="md:inline md:text-[12px] md:opacity-[0.6] text-[8px]">{item.title}</span>
                                 </Button>

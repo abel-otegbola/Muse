@@ -1,6 +1,6 @@
 "use client"
-import Button from "@/components/button/button";
-import Input from "@/components/input/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { AuthContext } from "@/context/useAuth";
 import { useContext } from "react";
 
@@ -21,15 +21,17 @@ export default function ProfilePage() {
                 </div>
                 <div className="py-2">
                     <div className="">
-                        <Input name="Username" type="text" title="Username" label="Username" error="" value="" />
+                        <label htmlFor="username" className="mb-2 block text-sm font-medium">Username</label>
+                        <Input id="username" name="Username" type="text" value="" />
                     </div>
                 </div>
                 <div className="py-2 mb-4">
                     <div className="">
-                        <Input name="Email" type="email" title="Email" label="Email" error="" value={user?.email} />
+                        <label htmlFor="email" className="mb-2 block text-sm font-medium">Email</label>
+                        <Input id="email" name="Email" type="email" value={user?.email ?? ""} readOnly />
                     </div>
                 </div>
-                <Button>Save changes</Button>
+                <Button type="button">Save changes</Button>
             </div>
         </div>
     )

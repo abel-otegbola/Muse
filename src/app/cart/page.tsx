@@ -1,5 +1,5 @@
 'use client'
-import Button from "@/components/button/button"
+import { Button } from "@/components/ui/button"
 import { storeContext } from "@/context/useStore"
 import { currencyFormatter } from "@/helpers/currencyConverter"
 import { Minus, Plus, ShoppingCart, Trash } from "@phosphor-icons/react"
@@ -63,7 +63,9 @@ export default function Cartpage() {
                 </div>
 
                 <div className="flex justify-end sm:static gap-2 border border-transparent border-t-black/[0.1] w-full sm:px-0 p-4">
-                    <Button href="/checkout">Proceed to checkout</Button>
+                                        <Button asChild>
+                                            <a href="/checkout">Proceed to checkout</a>
+                                        </Button>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import { ITalentsProps } from "@/interface/store";
 import { FacebookLogo, Heart, InstagramLogo, TwitterLogo } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function TalentCard({ talent }: {talent: ITalentsProps}) {
 

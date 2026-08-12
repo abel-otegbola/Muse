@@ -1,6 +1,6 @@
 'use client'
-import Button from "@/components/button/button";
-import Input from "@/components/input/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { AuthContext } from "@/context/useAuth";
 import { registerSchema } from "@/schema/auth";
 import { Envelope, LockKey, Spinner } from "@phosphor-icons/react";
@@ -44,15 +44,36 @@ export default function Register() {
                                 <p className="mt-2 mb-6">Let&apos;s get you started sharing your account</p>
                             </div>
                             
-                            <Input name="email" label="Email address" value={values.email} onChange={handleChange} type="email" error={touched.email ? errors.email : ""} placeholder="e.g alex@email.com" leftIcon={<Envelope size={16}/>}/>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="email" className="text-sm font-medium">Email address</label>
+                                <div className="relative">
+                                    <Envelope size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                    <Input id="email" name="email" value={values.email} onChange={handleChange} type="email" placeholder="e.g alex@email.com" className="pl-10" />
+                                </div>
+                                {touched.email && errors.email ? <p className="text-xs text-red">{errors.email}</p> : null}
+                            </div>
 
-                            <Input name="password" label="Create password" value={values.password} onChange={handleChange} type={"password"} error={touched.password ? errors.password : ""} placeholder="At least 8 characters" leftIcon={<LockKey size={16}/>}/>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="password" className="text-sm font-medium">Create password</label>
+                                <div className="relative">
+                                    <LockKey size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                    <Input id="password" name="password" value={values.password} onChange={handleChange} type="password" placeholder="At least 8 characters" className="pl-10" />
+                                </div>
+                                {touched.password && errors.password ? <p className="text-xs text-red">{errors.password}</p> : null}
+                            </div>
 
-                            <Input name="confirmPassword" label="Confirm password" value={values.confirmPassword} onChange={handleChange} type={"password"} error={touched.confirmPassword ? errors.confirmPassword : ""} placeholder="At least 8 characters" leftIcon={<LockKey size={16}/>}/>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="confirmPassword" className="text-sm font-medium">Confirm password</label>
+                                <div className="relative">
+                                    <LockKey size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                                    <Input id="confirmPassword" name="confirmPassword" value={values.confirmPassword} onChange={handleChange} type="password" placeholder="At least 8 characters" className="pl-10" />
+                                </div>
+                                {touched.confirmPassword && errors.confirmPassword ? <p className="text-xs text-red">{errors.confirmPassword}</p> : null}
+                            </div>
 
                             <p className="text-[12px] opacity-[0.6]">Password must contain at least 8 characters</p>
 
-                            <Button size="full">{ isSubmitting || loading ? <Spinner size={16} className="animate-spin" /> : "Create new account" }</Button>
+                            <Button type="submit" className="w-full">{ isSubmitting || loading ? <Spinner size={16} className="animate-spin" /> : "Create new account" }</Button>
 
                             <p className="text-center">Already have an account? <Link href={"/"} className="text-primary">Login</Link></p>
                         </form>

@@ -1,5 +1,5 @@
 'use client'
-import Button from "@/components/button/button";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,18 +8,21 @@ export default function Homepage() {
 
     return (
       <main>
-        <div className="md:px-[8%] md:py-[3%] p-8 flex justify-between bg-tetiary dark:bg-gray/[0.08] dark:bg-gray/[0.08] gap-5 lg:flex-nowrap flex-wrap">
+        <div className="relative md:min-h-[700px] h-screen bg-tetiary dark:bg-gray/[0.08] dark:bg-gray/[0.08] gap-5 lg:flex-nowrap flex-wrap">
           
-          <div className="flex flex-col gap-7 lg:w-[50%] mt-[5%]">
-              <h1 className="xl:text-[58px] sm:text-[48px] text-[32px] font-bold leading-[120%]">Discover Musical Talents, Lessons, Gigs and Gears</h1>
-              <p className="mb-2">Bri8 musicals find talented musicians for your next gig, learn from our expert instructors, buy, sell or rent musical instruments .</p>
+          <Image src="/hero.png" width={3000} height={500} alt="girl listening to music" className="absolute bottom-0 left-0 lg:block z-[1]" />
+          <div className="relative flex flex-col items-center  text-center md:h-[700px] h-screen gap-4 md:px-[22%] px-4 md:py-[6%] pt-[20%] z-[3] text-white bg-[#000]/[0.9]">
+              <h1 className="xl:text-[58px] sm:text-[48px] text-[32px] font-bold leading-[120%]">Connecting Music Talents With Global Opportunities.</h1>
+              <p className="mb-2 md:text-[16px] text-[14px] md:w-[80%]">Hire talented musicians, buy and sell instruments, learn music, and promote your craft, all in one growing music community. Muziic helps musicians and music lovers connect, grow, and create real opportunities together.</p>
               <div className="flex gap-4">
-                <Button href="/shop">Explore Products</Button>
-                <Button href="/talents" variant="secondary">Discover Talents</Button>
+                <Button asChild>
+                  <Link href="/shop">Explore Products</Link>
+                </Button>
+                <Button asChild variant="secondary">
+                  <Link href="/talents">Discover Talents</Link>
+                </Button>
               </div>
           </div>
-            
-          <Image src="/hero-image.png" width={500} height={500} alt="girl listening to music" className="lg:block" />
 
         </div>
 
