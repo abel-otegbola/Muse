@@ -12,9 +12,9 @@ const buttonVariants = cva(
         default: "bg-primary text-white shadow hover:bg-primary/90",
         primary: "bg-primary text-white shadow hover:bg-primary/90",
         secondary:
-          "border border-primary bg-white text-primary shadow-sm bg-dark hover:bg-gray/20",
+          "border border-primary bg-dark text-primary shadow-sm hover:bg-gray/20",
         tertiary:
-          "border border-gray/30 bg-white text-dark shadow-sm bg-dark text-gray hover:bg-gray/20",
+          "border border-gray/30 bg-dark text-gray shadow-sm hover:bg-gray/20",
         outline:
           "border border-gray/30 bg-transparent shadow-sm dark:hover:bg-gray/20",
         ghost: "hover:bg-tetiary dark:hover:bg-gray/20",

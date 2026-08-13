@@ -30,7 +30,7 @@ export default function Homepage() {
           {
             [ 
               { id: 0, text: "Buy or Rent Musical Instruments ", img: "/buy.png", actionHref: "shop", actionText: "Shop products", color: "text-primary" },
-              { id: 1, text: "Hire Talented Musicians ", img: "/hire.png", actionHref: "talents", actionText: "Find talents", color: "text-black dark:text-gray" },
+              { id: 1, text: "Hire Talented Musicians ", img: "/hire.png", actionHref: "talents", actionText: "Find talents", color: "text-gray" },
               { id: 2, text: "Learn Music From Our Courses ", img: "/learn.png", actionHref: "learn", actionText: "Start learning", color: "text-cyan-800" },
             ]
             .map(item => (

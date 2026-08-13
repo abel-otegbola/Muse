@@ -25,8 +25,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
-        <body className={questrial.className + " text-[12px] text-secondary dark:bg-dark dark:text-gray"}>
+    <html lang="en" className="dark">
+        <body className={questrial.className + " text-[12px] bg-dark text-foreground"}>
           <AuthProvider>
             <StoreContextProvider>
               <CheckDashboard />

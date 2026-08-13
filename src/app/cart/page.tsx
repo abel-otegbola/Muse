@@ -32,7 +32,7 @@ export default function Cartpage() {
                 {   
                     products.filter((item: any) => cart.map((item: any) => item.id).indexOf(item.id) !== -1 ).length > 0 ?
                     products.filter((item: any) => cart.map((item: any) => item.id).indexOf(item.id) !== -1 ).map((product: any) => (
-                        <div key={product?.id} className="relative bg-white dark:bg-dark dark:text-gray flex p-2 mx-2 rounded border border-gray/[0.7] dark:border-gray/[0.08]">
+                        <div key={product?.id} className="relative bg-dark text-gray flex p-2 mx-2 rounded border border-gray/[0.7] dark:border-gray/[0.08]">
                             <a href={`/product?id=${product?.id}`}>
                                 <Image src={"/" + product?.img} alt={product?.title} width={100} height={150} className="rounded bg-gray/[0.3] dark:bg-gray/[0.05] w-[100px] border border-gray/[0.5] dark:border-gray/[0.2]" />
                             </a>

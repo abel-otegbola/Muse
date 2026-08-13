@@ -30,7 +30,7 @@ export default function Shoppage() {
 
         </div>
 
-        <div className="flex justify-between md:px-[8%] p-8  ">
+        <div className="flex justify-between md:px-[8%] p-4 ">
           <div className="flex items-center gap-2"></div>
           <div className="flex items-center gap-2">
             <Button variant="secondary" type="button"><Funnel size={16} /> Filter</Button>
