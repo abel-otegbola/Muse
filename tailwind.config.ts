@@ -44,7 +44,6 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        "secondary": "#1D2128",
         "tetiary": "#FAFAFA",
         "black": "#333333",
         "dark": "#111116",
