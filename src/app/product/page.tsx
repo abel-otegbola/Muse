@@ -49,7 +49,7 @@ export default function ProductPage () {
                                 <div>
                                 {
                                     wishlist.indexOf(id) === -1 ? 
-                                    <button className="h-[40px] text-gray-300 flex items-center gap-2" onClick={() => toggleWishlist(id) }><Heart size={16}/>Save to wishlist</button> 
+                                    <button className="h-[40px] -300 flex items-center gap-2" onClick={() => toggleWishlist(id) }><Heart size={16}/>Save to wishlist</button> 
                                     : 
                                     <button className=" h-[40px] text-red-500 flex items-center gap-2" onClick={() => toggleWishlist(id)}><Heart size={16}/> Remove from wishlist</button> 
                                 }
@@ -72,7 +72,7 @@ export default function ProductPage () {
 
                             <div className="mt-6 flex items-center gap-4 py-4">
                                 
-                                <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-dark text-gray">
+                                <div className="text-[14px] border border-transparent border-t-black/[0.1] sm:px-0 py-6 w-full sm:z-0 bg-dark ">
                                 {
                                     cart.map((item: any) => item.id).indexOf(id) === -1 ? 
                                     <Button className="w-full" onClick={() => toggleCart(id) } >Add to Cart</Button>

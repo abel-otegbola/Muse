@@ -25,7 +25,7 @@ export default function DashboardLayout({
     ]
         return (
             <div className="flex min-h-[90vh]">
-                <div className="flex flex-col justify-between md:w-[250px] p-2 border border-gray/[0.3] dark:border-gray/[0.08] bg-dark text-gray">
+                <div className="flex flex-col justify-between md:w-[250px] p-2 border border-gray/[0.3] dark:border-gray/[0.08] bg-dark ">
                     <div className="flex flex-col gap-2 p-2 w-full rounded ">
                         <p className="opacity-[0.4] font-bold pt-4 pb-2 md:block hidden">GENERAL</p>
                         { 

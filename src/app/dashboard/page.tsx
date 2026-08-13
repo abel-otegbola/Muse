@@ -8,16 +8,16 @@ export default function Dashboard() {
 
     return (
         <div className="md:p-4 md:bg-gray/[0.2] dark:md:bg-gray/[0.05] w-full h-full">
-            <div className="flex p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark text-gray">
+            <div className="flex p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark ">
                 <h2 className="capitalize"><span className="font-semibold text-lg">Welcome, </span>{user?.displayName || user?.email.split("@")[0]}</h2>
             </div>
             
             <div className="grid md:grid-cols-2 md:mt-4 flex-wrap gap-4">
-                <div className="flex w-full min-h-[300px] p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark text-gray">
+                <div className="flex w-full min-h-[300px] p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark ">
                     <OverviewChart />
                 </div>
 
-                <div className="flex w-full p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark text-gray">
+                <div className="flex w-full p-4 border border-gray/[0.6] dark:border-gray/[0.08] md:rounded-[8px] bg-dark ">
                     <h2 className="capitalize text-md">Orders</h2>
                 </div>
             </div>

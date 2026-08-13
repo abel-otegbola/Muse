@@ -9,7 +9,7 @@ export default function ProfilePage() {
 
     return (
         <div className="p-4 md:bg-gray/[0.2] dark:md:bg-gray/[0.05]">
-            <div className="border border-gray/[0.8] bg-dark p-8 rounded-[8px] dark:border-gray/[0.08] text-gray">
+            <div className="border border-gray/[0.8] bg-dark p-8 rounded-[8px] dark:border-gray/[0.08] ">
                 <h3 id="account" className="py-2 text-lg">Account</h3>
                 <h3 className="pb-2 pt-4 text-sm">Profile</h3>
                 <p className="opacity-[0.6]">Update your photo and personal details</p>

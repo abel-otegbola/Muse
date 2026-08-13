@@ -14,13 +14,13 @@ export default function Register() {
     const { signUp, loading } = useContext<any>(AuthContext)
 
     return (
-        <div className="min-h-[500px] flex mt-[3%] gap-12 sm:items-center justify-center">
+        <div className="min-h-[500px] flex gap-12">
             
-            <div className="sm:block hidden w-[400px] h-[500px] relative rounded-[20px]">
-              <Image src={"/guitarist-bass.jpg"} alt="guitarist" fill sizes={"100%"} className="rounded-[20px] object-cover" />
+            <div className="sm:block hidden w-[400px] h-screen relative">
+              <Image src={"/guitarist-bass2.png"} alt="guitarist" fill sizes={"100%"} className="object-cover" />
             </div>
 
-            <div className="sm:w-[476px] w-full p-8">
+            <div className="sm:flex-1 w-full p-8 sm:px-[10%] flex items-center h-screen justify-center">
                 <Formik
                     initialValues={{ email: '', password: '', confirmPassword: "" }}
                     validationSchema={registerSchema}
@@ -28,6 +28,7 @@ export default function Register() {
                         signUp(values.email, values.password);
                         setSubmitting(false);
                     }}
+                    className=""
                     >
                     {({
                         values,
@@ -38,7 +39,7 @@ export default function Register() {
                         isSubmitting,
                         /* and other goodies */
                       }) => (
-                        <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                        <form className="flex flex-col gap-5 sm:min-w-[300px]" onSubmit={handleSubmit}>
                             <div>
                                 <h1 className="font-bold text-xl">Create account</h1>
                                 <p className="mt-2 mb-6">Let&apos;s get you started sharing your account</p>

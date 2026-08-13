@@ -36,6 +36,10 @@ export default function Header() {
         { id: 3, label: "Gigs", to: "/gigs", icon: <ListMagnifyingGlassIcon /> }
     ]
 
+    if(["/register", "/login"].includes(pathname)) {
+        return null;
+    }
+
     return (
         <>
         <div className="flex items-center justify-between sticky top-0 left-0 w-full lg:px-[8%] z-[50] px-8 backdrop-blur-sm bg-dark p-3 border border-transparent border-b-primary/[0.1]">
@@ -43,7 +47,7 @@ export default function Header() {
                 <Image src="/logo.svg" width={30} height={30} alt="logo" className="lg:block" />
             </Link>
 
-            <nav className="items-center justify-between gap-4 text-gray lg:w-auto w-full lg:flex hidden z-[50] lg:p-0 p-4">
+            <nav className="items-center justify-between gap-4 lg:w-auto w-full lg:flex hidden z-[50] lg:p-0 p-4">
                 {navTabs.map((tab: navTab) => (
                     <Link
                         key={tab.id}
@@ -66,7 +70,7 @@ export default function Header() {
                 <Button asChild variant="ghost" size="icon" className="relative rounded-full bg-gray/20 dark:bg-gray/10">
                     <Link href="/cart">
                         <ShoppingCartIcon size={16}/>
-                        <sup className="absolute -right-1 -top-1 rounded-full px-1 py-1.5 text-[10px] bg-dark text-gray">{cart.length}</sup>
+                        <sup className="absolute -right-1 -top-1 rounded-full px-1 py-1.5 text-[10px] bg-dark ">{cart.length}</sup>
                     </Link>
                 </Button>
                 <DropdownMenu>
@@ -91,7 +95,7 @@ export default function Header() {
                 </DropdownMenu>
             </div>
         </div>
-        <nav className="flex items-center justify-between gap-4 w-full lg:shidden fixed left-0 mt-auto bottom-0 z-[50] bg-dark p-4 border border-transparent border-t-primary/[0.2]">
+        <nav className="flex items-center justify-between gap-4 w-full lg:hidden fixed left-0 mt-auto bottom-0 z-[50] bg-dark p-4 border border-transparent border-t-primary/[0.2]">
             {navTabs.map((tab: navTab) => (
                 <Link
                     key={tab.id}

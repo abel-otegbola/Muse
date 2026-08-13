@@ -21,7 +21,7 @@ export default function DashboardHeader() {
     const { cart } = useContext(storeContext)
     const { user, logOut } = useContext(AuthContext)
     return (
-        <div className="flex items-center justify-between sticky top-0 left-0 w-full z-[50] px-6 bg-dark text-gray p-3 border border-transparent border-b-primary/[0.1]">
+        <div className="flex items-center justify-between sticky top-0 left-0 w-full z-[50] px-6 bg-dark  p-3 border border-transparent border-b-primary/[0.1]">
             <Link href="/">
                 <Image src="/logo.svg" width={30} height={30} alt="logo" className="lg:block" />
             </Link>
@@ -33,7 +33,7 @@ export default function DashboardHeader() {
                 <Button asChild variant="ghost" size="icon" className="relative rounded-full bg-gray/20 dark:bg-gray/10">
                     <Link href="/cart">
                         <ShoppingCart size={16}/>
-                        <sup className="absolute -right-1 -top-1 rounded-full bg-dark px-1.5 py-0.5 text-[8px] text-emerald-500 dark:text-gray">{cart.length}</sup>
+                        <sup className="absolute -right-1 -top-1 rounded-full bg-dark px-1.5 py-0.5 text-[8px] text-emerald-500 dark:">{cart.length}</sup>
                     </Link>
                 </Button>
                 <DropdownMenu>

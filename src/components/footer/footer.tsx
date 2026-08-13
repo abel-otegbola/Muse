@@ -1,8 +1,14 @@
 'use client'
 import { FacebookLogo, InstagramLogo, TwitterLogo } from "@phosphor-icons/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Footer() {
+    const pathname = usePathname()
+    
+    if(["/register", "/login"].includes(pathname)) {
+        return null;
+    }
     return (
         <footer className="bg-black dark:bg-[#000]/[0.6] text-[#D9D9F2] mt-12">
             <div className="grid lg:grid-cols-4 grid-cols-2 text-[12px] gap-[30px] py-[30px] md:px-[8%] px-8 border border-transparent border-t-gray-700/[0.09] dark:border-t-gray-100/[0.09]">
